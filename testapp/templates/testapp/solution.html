@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block nonavbar%}
+
+{% endblock %}
+{% block body%}
+    {{question}}
+
+    <br>
+    {% if arr0 == "1" %}
+    <div class="bg-success solutionbox">
+        {{option0}}
+    </div>
+    {% elif arr0 == "2" %}
+    <div class="bg-danger solutionbox">
+        {{option0}}
+    </div>
+    {% else %}
+    <div class="bg-light solutionbox">
+        {{option0}}
+    </div>
+    {% endif %}
+
+    {% if arr1 == "1"%}
+    <div class="bg-success solutionbox">
+        {{option1}}
+    </div>
+    {% elif arr1 == "2" %}
+    <div class="bg-danger solutionbox">
+        {{option1}}
+    </div>
+    {% else %}
+    <div class="bg-light solutionbox">
+        {{option1}}
+    </div>
+    {% endif %}
+
+    {% if arr2 == "1" %}
+    <div class="bg-success solutionbox">
+        {{option2}}
+    </div>
+    {% elif arr2 == "2" %}
+    <div class="bg-danger solutionbox">
+        {{option2}}
+    </div>
+    {% else %}
+    <div class="bg-light solutionbox">
+        {{option2}}
+    </div>
+    {% endif %}
+
+    {% if arr3 == "1" %}
+    <div class="bg-success solutionbox">
+        {{option3}}
+    </div>
+    {% elif arr3 == "2" %}
+    <div class="bg-danger solutionbox">
+        {{option3}}
+    </div>
+    {% else %}
+    <div class="bg-light solutionbox">
+        {{option3}}
+    </div>
+    {% endif %}
+    <a href="quiz{{pk}}"><button class="btn btn-primary">Next</button></a>
+    
+{%endblock%}

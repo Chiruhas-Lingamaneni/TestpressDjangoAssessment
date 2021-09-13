@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+{% block body %}
+    <ol>
+    {% for x,z in questions%}
+        <li>{{x.question}}</li>
+        <br>
+        {% for y in x.get_answers%}
+            {% if y.correct%}
+                <div class="solutionbox bg-success bg-sucess">
+                    {{y.option}}
+                </div>
+                
+            {% else %}
+                <div class="solutionbox">
+                    {{y.option}}
+                </div>         
+            {%endif%}
+        {% endfor %}
+        <p>Your response is/are:</p>
+        <ul>
+          {% for zz in z%}
+            <li>{{zz}}</li>            
+          {%endfor%}
+        </ul>
+        <hr>
+        <p></p>
+    {%endfor%}
+    </ol>
+{% endblock %}

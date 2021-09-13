@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+{% block nonavbar%}
+
+{% endblock %}
+{% block body%}
+    
+    
+
+    <form action="answer{{pk}}" method="POST">
+        {% csrf_token %}
+
+        <div id="row type-select">
+            <p>{{questionno}}.) {{question}}</p>
+            <p></p>
+            {% for x in options%}
+            <div class="col s12 m4 l4 center-align">
+                <input type="checkbox" name="{{x.pk}}">
+                <label for="{{x.pk}}">{{x.option}}</label>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <input class="quiznext" type="submit" placeholder="next">
+    </form>
+
+
+{% endblock %}

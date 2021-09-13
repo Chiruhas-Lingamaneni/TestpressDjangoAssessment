@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+{% block body %}
+    
+    <h6>test name:
+        <span class="text-secondary">
+            {{ test_details.name }}
+        </span>
+        
+    </h6>
+    <h6>number of questions:
+        <span class="text-secondary">
+            {{ test_details.number_of_questions }}
+        </span>
+    </h6>
+    <h6>score to pass:
+        <span class="text-secondary">
+            {{ test_details.score_to_pass }}    
+        </span>
+    </h6>
+    <h6>difficulity level:
+        <span class="text-secondary">
+            {{ test_details.difficulity }}    
+        </span>
+    </h6>
+    <div class="d-flex p-2">
+        <div class="p-2 lg-6">
+            <a href="{% url 'testapp:home'%}">
+                <button class="btn-danger">Back</button>
+            </a>
+        </div>
+        <div class="p-2 lg-6">
+            <a href="quiz{{test_details.id}}">
+                <button class="btn-primary">Start</button>
+            </a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block body %}
+
+    <h4>Select test you want to start</h4>
+    <ul>
+        {% for x in object_list %}
+            <li>
+                <a class="text-dark" href='set{{x.id}}'>{{ x.name }}</a>
+            </li>        
+        {% endfor %}
+    </ul>
+    
+{% endblock %}

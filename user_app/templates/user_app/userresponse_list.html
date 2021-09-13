@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+{% block body %}
+    <h4> Welcome {{object_list.username}}</h4>
+    <h4>Here are your test submessions</h4>
+    {% for eachtest in object_list.usermodel.all%}
+    <br>
+    <br>
+        <div class="border border-dark boxpadding">
+            <ul>
+                <li>
+                    <span class="text-dark">Test ID:</span>
+                    <span class="text-secondary">{{eachtest.quizid}}</span>
+                </li>
+                <li>
+                    <span class="text-dark">Score:</span>
+                    <span class="text-secondary">{{eachtest.score}}</span>
+                </li>
+                <li>
+                    <span class="text-dark">Time taken:</span>
+                    <span class="text-secondary">{{eachtest.timetaken}} seconds</span>
+                </li>
+            </ul>
+            <p class="p-2">{{eachtest.result}}</p>
+            <a href="detail{{ forloop.counter0 }}"><button class="btn btn-primary">Detailed view</button></a>
+            <p></p>
+        </div>
+
+    {% endfor %}
+{% endblock %}

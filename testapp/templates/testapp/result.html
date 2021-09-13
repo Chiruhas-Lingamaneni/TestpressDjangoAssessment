@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block body %}
+    <p>Your score is {{yourscore}}</p>
+    <p>Score to clear the test is {{scoretopass}}</p>
+    <p>Time taken is: {{timetaken}} seconds</p>
+    <p>Result: {{text}}</p>
+    <a href="{% url 'testapp:home'%}">
+        <button class="btn btn-primary">
+            Back to home
+        </button>
+    </a>
+
+{% endblock %}
